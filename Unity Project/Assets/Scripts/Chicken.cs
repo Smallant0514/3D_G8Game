@@ -3,6 +3,7 @@
 //類別 類別名稱
 public class Chicken : MonoBehaviour
 {
+    #region 變數方法
     // 宣告變數 (定義欄位 Field)
     // 修飾詞 欄位類型 欄位名稱 (指定 值) 結束
     // 私人 - 隱藏 private (預設)
@@ -16,10 +17,48 @@ public class Chicken : MonoBehaviour
     public bool mission = false;
     [Header("玩家名稱")]
     public string Name = "G8雞";
+    #endregion
 
-    public void Run(int speed)
+    #region 方法區域
+
+    /// <summary>
+    /// 跑步
+    /// </summary>
+    private void Run()
     {
 
     }
-        
+
+    /// <summary>
+    /// 旋轉
+    /// </summary>
+    private void Turn()
+    {
+
+    }
+
+    /// <summary>
+    /// 亂叫
+    /// </summary>
+    private void Bark()
+    {
+
+    }
+
+    /// <summary>
+    /// 撿東西
+    /// </summary>
+    private void Catch()
+    {
+
+    }
+
+    /// <summary>
+    /// 檢視任務
+    /// </summary>
+    private void Task()
+    {
+
+    }
+    #endregion
 }

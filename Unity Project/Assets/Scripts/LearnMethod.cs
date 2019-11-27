@@ -31,6 +31,17 @@ public class LearnMethod : MonoBehaviour
 
     }
 
+    private int Square()
+    {
+        return 2 * 2;
+    }
+    //private int Square(int number = 2)
+    //{
+    //    return number * number;
+    //}
+
+
+
     // 事件 : 在指定的時間會以指定次數執行的方法
     // 初始事件 : 遊戲播放後執行一次
     private void Start()
@@ -43,5 +54,15 @@ public class LearnMethod : MonoBehaviour
         Shoot(1, 1.5f);
         Shoot(10,10.5f,"火屬性");
         Shoot(3, 2, direction: "前後方"); // 用指名的方式設定參數
+
+
+        print(Square());  //當成傳回類型使用
+
+        int result = Square();  //存放在區域欄位內
+        print(result);
+
+        // int result = Square(9);
+        // print(result);
+
     }
 }
