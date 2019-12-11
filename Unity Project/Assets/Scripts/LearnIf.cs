@@ -7,7 +7,6 @@ public class LearnIf : MonoBehaviour
     public int score = 100;
 
     public int combo = 0;
-    public int attack = 10;
 
     private void Start()
     {
@@ -21,6 +20,8 @@ public class LearnIf : MonoBehaviour
     private void Update()
     {
         #region if
+
+        /*
         if (openDoor)
         {
             //   if () 內的布林值為 true 執行 if { }
@@ -49,29 +50,20 @@ public class LearnIf : MonoBehaviour
         {
             print("被當惹");
         }
+        */
         #endregion
 
-        if(combo>=50 && combo <= 99)
+        if(combo>=150)
         {
-            attack = attack * 2;
-            print(attack);
+            print("攻擊10倍");
         }
-        else if (combo >= 100 && combo <= 149)
+        else if (combo >=100)
         {
-            attack = attack * 5;
-            print(attack);
+            print("攻擊5倍");
         }
-        else if(combo>=150)
+        else if (combo>=50)
         {
-            attack = attack * 10;
-            print(attack);
+            print("攻擊2倍");
         }
-        else
-        {
-            attack = 10;
-            print(attack);
-        }
-
-
     }
 }
