@@ -26,6 +26,9 @@ public class Chicken : MonoBehaviour
 
     public AudioClip soundbark;
 
+    [Header("撿物品位置")]
+    public Rigidbody rigCatch;
+
 
     private void Update()
     {
@@ -33,6 +36,26 @@ public class Chicken : MonoBehaviour
         Run();
         Bark();
         Catch();
+    }
+
+    // 觸發碰撞時持續執行 (一秒執行約60次) 碰撞物件資訊
+    private void OnTriggerStay(Collider other)
+    {
+        print(other.name);
+        // 如果 碰撞物件的名稱 為 蝦子 且 撥放動畫撿東西
+        if(other.name == "蝦子" && ani.GetCurrentAnimatorStateInfo(0).IsName("撿東西"))
+        {
+            // 物理.忽略碰撞(A碰撞,B碰撞)
+            Physics.IgnoreCollision(other, GetComponent<Collider>());
+            // 碰撞物件.取得元件<泛型>().連接身體 = 撿物品位置
+            other.GetComponent<HingeJoint>().connectedBody = rigCatch;
+        }
+
+        if (other.name == "沙子" && ani.GetCurrentAnimatorStateInfo(0).IsName("撿東西"))
+        {
+            GameObject.Find("蝦子").GetComponent<HingeJoint>().connectedBody = null;
+        }
+
     }
 
 
